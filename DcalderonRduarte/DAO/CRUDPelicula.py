@@ -28,16 +28,17 @@ def eliminar(id_pelicula):
     except Exception as e:
         print("\nError en Eliminar: {}".format(e))
 
-def modificar(p):
+def actualizar(p):
     try:
-        con=Conexion(host,user,password,db)
-        sql="update pelicula set titulo_pelicula='{}', duracion={}, fecha_de_estreno='{}', genero={}, idioma={}, director='{}' where id_pelicula={}".format(p[1], p[2], p[3], p[4], p[5], p[6], p[0])
+        con = Conexion(host, user, password, db)
+        sql = "update pelicula set titulo_pelicula='{}', duracion={}, fecha_de_estreno='{}', genero={}, idioma={}, director='{}' where id_pelicula={}".format(p[1], p[2], p[3], p[4], p[5], p[6], p[0])
         con.ejecuta_query(sql)
         con.commit()
-        input("\n\nPelicula modificada con exito\nPresione Enter para continuar")
+        input("\n\nPelícula actualizada con éxito\nPresione Enter para continuar")
         con.desconectar()
     except Exception as e:
-        print("\nERROR en Modificar: {}".format(e))
+        print("\nERROR al actualizar: {}".format(e))
+
 
 def mostrarTodos():
     try:
@@ -65,7 +66,7 @@ def mostrarParcial(cantidad):
 
 def mostrarParticular(id_pelicula):
     try:
-        con=Conexion(host, user, password, db)
+        con=Conexion(host,user,password,db)
         sql="select * from pelicula where id_pelicula={}".format(id_pelicula)
         cursor=con.ejecuta_query(sql)
         dato=cursor.fetchone()
