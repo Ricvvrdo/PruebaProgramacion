@@ -15,7 +15,7 @@ def ingresar(p):
         input("\n\nPelicula ingresada con exito :)\nPresione Enter para continuar")
         con.desconectar()
     except Exception as e:
-        print("\nError en ingresar: {}".format(e))
+        print("\nError en ingresar pelicula: {}".format(e))
 
 def eliminar(id_pelicula):
     try:
@@ -26,18 +26,18 @@ def eliminar(id_pelicula):
         input("\n\nPelicula eliminada con exito\nPresione Enter para continuar")
         con.desconectar()
     except Exception as e:
-        print("\nError en Eliminar: {}".format(e))
+        print("\nError en eliminar pelicula: {}".format(e))
 
-def actualizar(p):
+def modificar(p): #Modificar
     try:
         con = Conexion(host,user,password,db)
         sql = "update pelicula set titulo_pelicula='{}', duracion={}, fecha_de_estreno='{}', genero={}, idioma={}, director='{}' where id_pelicula={}".format(p[1], p[2], p[3], p[4], p[5], p[6], p[0])
         con.ejecuta_query(sql)
         con.commit()
-        input("\n\nPelícula actualizada con éxito\nPresione Enter para continuar")
+        input("\n\nLa pelicula fue modificada con exito\nPresione Enter para continuar")
         con.desconectar()
     except Exception as e:
-        print("\nError al actualizar: {}".format(e))
+        print("\nError al modificar la pelicula: {}".format(e))
 
 
 def mostrarTodos():
@@ -49,7 +49,7 @@ def mostrarTodos():
         con.desconectar()
         return datos
     except Exception as e:
-        print("\nError en mostrar todos: {}".format(e))
+        print("\nError en mostrar todas las peliculas: {}".format(e))
         return None
 
 def mostrarParcial(cantidad):
@@ -61,7 +61,7 @@ def mostrarParcial(cantidad):
         con.desconectar()
         return datos
     except Exception as e:
-        print("\nError en mostrar parcial: {}".format(e))
+        print("\nError en mostrar parcialmente: {}".format(e))
         return None
 
 def mostrarParticular(id_pelicula):
