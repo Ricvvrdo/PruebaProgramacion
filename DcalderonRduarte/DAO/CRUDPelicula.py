@@ -30,14 +30,14 @@ def eliminar(id_pelicula):
 
 def actualizar(p):
     try:
-        con = Conexion(host, user, password, db)
+        con = Conexion(host,user,password,db)
         sql = "update pelicula set titulo_pelicula='{}', duracion={}, fecha_de_estreno='{}', genero={}, idioma={}, director='{}' where id_pelicula={}".format(p[1], p[2], p[3], p[4], p[5], p[6], p[0])
         con.ejecuta_query(sql)
         con.commit()
         input("\n\nPelícula actualizada con éxito\nPresione Enter para continuar")
         con.desconectar()
     except Exception as e:
-        print("\nERROR al actualizar: {}".format(e))
+        print("\nError al actualizar: {}".format(e))
 
 
 def mostrarTodos():
