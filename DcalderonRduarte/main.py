@@ -1,4 +1,5 @@
 import os
+from DTO.Pelicula import Pelicula
 import DAO.CRUDPelicula
 
 #Contruccion de menus

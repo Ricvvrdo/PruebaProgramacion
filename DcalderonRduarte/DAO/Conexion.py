@@ -3,10 +3,10 @@ class Conexion:
 
     def __init__(self,host,user,password,db):
         self.db=pymysql.connect(
-            host=host,
-            user=user,
-            password=password,
-            db=db
+            host='localhost',
+            user='root',
+            password='',
+            db='bd_peliculas'
         )
         self.cursor=self.db.cursor()
     
