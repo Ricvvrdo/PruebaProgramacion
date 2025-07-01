@@ -34,7 +34,11 @@ def modificar(p): #Modificar
         sql = "update pelicula set titulo_pelicula='{}', duracion={}, fecha_de_estreno='{}', genero={}, idioma={}, director='{}' where id_pelicula={}".format(p[1], p[2], p[3], p[4], p[5], p[6], p[0])
         con.ejecuta_query(sql)
         con.commit()
+<<<<<<< HEAD
         input("\n\nLa pelicula fue modificada con exito :)\nPresione Enter para continuar")
+=======
+        input("\n\nLa pelicula fue modificada con exito\nPresione Enter para continuar")
+>>>>>>> a3a4dad9b18e14dcdd4175d3d38a99df432772d7
         con.desconectar()
     except Exception as e:
         print("\nError al modificar la pelicula: {}".format(e))
