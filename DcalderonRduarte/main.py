@@ -2,10 +2,7 @@ import os
 from DTO.Pelicula import Pelicula
 import DAO.CRUDPelicula
 
-#Construir los Menus
-#Creamos el Menu Principal
 def menuPrincipal():
-    #Esto permite hacer un limpiado de pantalla
     os.system('cls')
     print("================================")
     print("        MENU PRINCIPAL")
@@ -17,7 +14,6 @@ def menuPrincipal():
     print(      "5.- (E) Salir")
     print("================================")
 
-#Cramos el Menu para mostrar
 def menuMostrar():
     os.system('cls')
     print("================================")
@@ -29,14 +25,13 @@ def menuMostrar():
     print(      "4.- Volver")
     print("================================")
 
-#Creamos la función para Ingresar Película
 def ingresarPelicula():
     os.system('cls')
     print("==================================")
     print("    Ingresar datos de pelicula ")
     print("==================================")
     titulo=input("Ingrese titulo: ")
-    duracion=int(input("Ingrese duracion: "))
+    duracion=int(input("Ingrese duracion (ej 120(Referente a minutos): "))
     fecha=input("Ingrese fecha estreno (AAAA-MM-DD): ")
     print("---------------------------------------")
     print("1. Terror")
@@ -117,7 +112,6 @@ def mostrarUno():
     print("Director           :{}".format(dato[6]))
     input("Presione Enter para continuar......")
 
-#Crear la Función para Modificar
 def modificarPelicula():
     nuevosDatos=[]
     os.system('cls')
