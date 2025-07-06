@@ -43,7 +43,6 @@ def eliminar(id_pelicula):
     except Exception as e:
         print("\nError al eliminar la pelicula: {}".format(e))
 
-
 def mostrarTodos():
     try:
         con = Conexion(host, user, password, db)
