@@ -31,7 +31,7 @@ def ingresarPelicula():
     print("    Ingresar datos de pelicula ")
     print("==================================")
     titulo=input("Ingrese titulo: ")
-    duracion=int(input("Ingrese duracion (ej 120(Referente a minutos): "))
+    duracion=int(input("Ingrese duracion (ej: 120(Referente a minutos)): "))
     fecha=input("Ingrese fecha estreno (AAAA-MM-DD): ")
     print("---------------------------------------")
     print("1. Terror")
