@@ -51,9 +51,6 @@ def ingresarPelicula():
     DAO.CRUDPelicula.ingresar(p)
     input("Presione enter para continuar......")
 
-    
-
-
 def mostrar():
     while True:
         menuMostrar()
@@ -70,7 +67,6 @@ def mostrar():
         else:
             print("Opcion Ingresada esta fuera de rango ....")
 
-
 def mostrarTodos():
     os.system('cls')
     print("============================")
@@ -80,7 +76,6 @@ def mostrarTodos():
     print("\tID\tTítulo\tDuración\tEstreno\tGénero\tIdioma\tDirector")
     for dato in datos:
         print("\t{}\t{}\t{}\t{}\t{}\t{}\t{}".format(dato[0],dato[1],dato[2],dato[3],dato[4],dato[5],dato[6]))
-
 
 def mostrarParcial():
     os.system('cls')
@@ -92,7 +87,6 @@ def mostrarParcial():
     print("\tID\tTítulo\tDuración")
     for dato in datos:
         print("\t{}\t{}\t{}".format(dato[0],dato[1],dato[2]))
-
 
 def mostrarUno():
     os.system('cls')
@@ -163,6 +157,24 @@ def modificarPelicula():
     else:
         nuevosDatos.append(dato[6])
 
+def eliminarPelicula():
+    os.system('cls')
+    print("****************************")
+    print("  Eliminar una Película ")
+    print("****************************")
+    mostrarTodos()
+    op_eliminar = int(input("Ingrese el ID de la Pelicula a eliminar: "))
+    confirmacion = input(f"¿Está seguro que desea eliminar la película con ID {op_eliminar}? [S/N]: ")
+    if confirmacion.upper() == "S":
+        resultado = DAO.CRUDPelicula.eliminar(op_eliminar)
+        if resultado:
+            print("Pelicula eliminada exitosamente.")
+        else:
+            print("No se pudo eliminar la pelicula. Verifique el ID.")
+    else:
+        print("Operacion cancelada por el usuario.")
+    input("Presione Enter para continuar...")
+
 while(True):
     menuPrincipal()
     op=int(input("Ingrese una Opción: "))
@@ -172,9 +184,9 @@ while(True):
         mostrar()
     elif op==3:
         modificarPelicula()
-    if op==4:
-        input("Eliminar")
-    if op==5:
+    elif op==4:
+        eliminarPelicula()
+    elif op==5:
         op2=input("Desea Salir S[SI]/N[NO]: ".upper())
         if op2=="S":
             exit()
