@@ -35,14 +35,14 @@ def ingresarPelicula():
     fecha=input("Ingrese fecha estreno (AAAA-MM-DD): ")
     print("---------------------------------------")
     print("1. Terror")
-    print("2. Ciencia Ficción")
+    print("2. Ciencia Ficcion")
     print("3. Drama")
     print("---------------------------------------")
     genero=int(input("Seleccione Genero: "))
     print("---------------------------------------")
     print("1. Español")
-    print("2. Inglés")
-    print("3. Portugués")
+    print("2. Ingles")
+    print("3. Portugues")
     print("---------------------------------------")
     idioma=int(input("Seleccione idioma: "))
     director=input("Ingrese director: ")
@@ -54,7 +54,7 @@ def ingresarPelicula():
 def mostrar():
     while True:
         menuMostrar()
-        op2=int(input("Ingrese una Opcción: "))
+        op2=int(input("Ingrese una Opccion: "))
         if op2==1:
             mostrarTodos()
             input("Presione enter para continuar......")
@@ -159,12 +159,12 @@ def modificarPelicula():
 
 def eliminarPelicula():
     os.system('cls')
-    print("****************************")
-    print("  Eliminar una Película ")
-    print("****************************")
+    print("==========================")
+    print("  Eliminar una Pelicula ")
+    print("===========================")
     mostrarTodos()
     op_eliminar = int(input("Ingrese el ID de la Pelicula a eliminar: "))
-    confirmacion = input(f"¿Está seguro que desea eliminar la película con ID {op_eliminar}? [S/N]: ")
+    confirmacion = input(f"¿Está seguro que desea eliminar la pelicula con ID {op_eliminar}? [S/N]: ")
     if confirmacion.upper() == "S":
         resultado = DAO.CRUDPelicula.eliminar(op_eliminar)
         if resultado:
@@ -187,8 +187,8 @@ while(True):
     elif op==4:
         eliminarPelicula()
     elif op==5:
-        op2=input("Desea Salir S[SI]/N[NO]: ".upper())
+        op2=input("Desea salir S[SI]/N[NO]: ".upper())
         if op2=="S":
             exit()
     else:
-        print("Opción está fuera de Rango....")
+        print("Opcion esta fuera de Rango....")
