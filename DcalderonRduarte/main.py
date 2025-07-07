@@ -51,6 +51,8 @@ def ingresarPelicula():
     DAO.CRUDPelicula.ingresar(p)
     input("Presione enter para continuar......")
 
+    
+
 
 def mostrar():
     while True:
