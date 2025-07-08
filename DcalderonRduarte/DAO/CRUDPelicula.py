@@ -53,7 +53,7 @@ def mostrarTodos():
         return datos
     except Exception as e:
         print("\nError al mostrar todas las peliculas: {}".format(e))
-        return None
+
 
 def mostrarParcial(cantidad):
     try:
@@ -65,7 +65,6 @@ def mostrarParcial(cantidad):
         return datos
     except Exception as e:
         print("\nError al mostrar parcialmente las películas: {}".format(e))
-        return None
 
 def mostrarParticular(id_pelicula):
     try:
@@ -77,4 +76,3 @@ def mostrarParticular(id_pelicula):
         return dato
     except Exception as e:
         print("\nError al mostrar la pelicula solicitada: {}".format(e))
-        return None
